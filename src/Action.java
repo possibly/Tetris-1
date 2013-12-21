@@ -55,7 +55,7 @@ public class Action extends JPanel {
 
     /**
         This class will repaint everything on JPanel once in a 
-        specified time.
+        specified period of time.
     */ 
 
     private class TimerListener implements ActionListener { 
