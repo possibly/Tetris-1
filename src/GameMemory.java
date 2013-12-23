@@ -267,6 +267,7 @@ public class GameMemory {
                         cellCount++; 
                         if(cellCount == 12) {
                             gridReajustment(i);
+                            new AePlayWave("../Assets/sounds/row_dissapear.wav").start();
                         }
                     }
                     
@@ -298,12 +299,15 @@ public class GameMemory {
                 block3_Y += 1;  
 
                 figureReinitialize();
+                new AePlayWave("../Assets/sounds/move1.wav").start();
+
             }
 
             else 
                 //If we reached the end of field or toched 
                 //the other figure the current one stops.
                 GameMemory.this.figure.stopFigure(); 
+  
         }
 
         /**
@@ -321,6 +325,7 @@ public class GameMemory {
             GameMemory.this.grid[figure.getBlock3_Y()]
                                 [figure.getBlock3_X() ] = 2; 
 
+            new AePlayWave("../Assets/sounds/stop.wav").start();
             //After the figure is stopped this will 
             //check if any rows are full and destroy if there are
             GameMemory.this.figure.searchNDestroy();
@@ -594,8 +599,17 @@ public class GameMemory {
                 figure.moveDown(); 
             }
             if(check == true) { 
-               System.out.println("You lost!");
-               System.exit(0);
+                new AePlayWave("../Assets/sounds/game_over.wav").start();
+                System.out.println("You lost!");
+                //This is just a timer to delay exit from the game 
+                //in order to allow the audio file to play complietly. 
+                new java.util.Timer().schedule( 
+                    new java.util.TimerTask() {
+                            @Override
+                            public void run() {
+                                System.exit(0);
+                            }
+                        }, 615);
             }
         } 
     }
