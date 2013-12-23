@@ -8,7 +8,7 @@ import java.awt.*;
 
 public class GameWindow { 
     private final String GAME_NAME = "Tetris"; 
-    public static final int FRAME_SIZE_X = 360; 
+    public static final int FRAME_SIZE_X = 370; 
     public static final int FRAME_SIZE_Y = 720; 
      
     public GameWindow() { 

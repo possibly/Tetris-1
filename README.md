@@ -18,15 +18,12 @@ turn to for a review and advice.
 
 KNOWN BUGS:
 
-1)On 19th figure initialization the program automatically terminates. 
-
-2)Figures change their color to gray before they stop. 
 
 ------------------------------------------------------------------------------------
 
 TO DO: 
 
-1)Fix the bugs.
+1)Fix the critical bugs. DONE!
 
 2)Create a panel that would show the next figure to fall.
 

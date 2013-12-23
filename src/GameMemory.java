@@ -37,7 +37,7 @@ public class GameMemory {
     /**
         This class defines everything the figure can do 
         as well as everything it can be. 
-    */ 
+   */ 
 
     public class Figure { 
         private char figureType; 
@@ -46,7 +46,7 @@ public class GameMemory {
         private int block1_Y; 
     
         private int block0_X = 6;   //This is the point where 
-        private int block0_Y = 3;   //the figure's axis of rotation will appear. 
+        private int block0_Y = 2;   //the figure's axis of rotation will appear. 
     
         private int block2_X; 
         private int block2_Y; 
@@ -58,7 +58,7 @@ public class GameMemory {
             The constructor only initializes the type of figure. 
         */ 
         public Figure() { 
-            setCoordinates(this.getFigure()); 
+            setCoordinates(figureType = this.getFigure()); 
         }
 
         /**
@@ -84,7 +84,7 @@ public class GameMemory {
     
             else if(figureType == 'J') {
                 
-                Action.penColor = Color.BLUE;
+                Action.penColor = Color.WHITE;
 
                 block1_X = block0_X; 
                 block1_Y = block0_Y + 1; 
@@ -266,8 +266,6 @@ public class GameMemory {
                     if(GameMemory.this.grid[i][j] == 2) {
                         cellCount++; 
                         if(cellCount == 12) {
-                            System.out.println(j);
-                            System.out.println("Destroy!");
                             gridReajustment(i);
                         }
                     }
@@ -468,8 +466,6 @@ public class GameMemory {
 
             block_X = rblock_X + block0_X; 
             block_Y = rblock_Y + block0_Y; 
-            System.out.println(block_X); 
-            System.out.println(block_Y); 
             return new int[] {block_X, block_Y};
         }
 
@@ -478,8 +474,7 @@ public class GameMemory {
             is capable of rotation and rotate them if they are.
         */
 
-        public void rotateRight() {
-
+        public void rotateRight() { 
             int cellsCanRotate = 0;
 
             int[] rotatedCell1 = rotateCellRight(block1_X, block1_Y); 
@@ -494,7 +489,7 @@ public class GameMemory {
             cellsCanRotate += cellCanRotate(rotatedCell3[0],
                                             rotatedCell3[1]);
 
-            if(cellsCanRotate == 3 && figureType != 'O') {
+            if(cellsCanRotate == 3 && this.figureType != 'O') {
                 setGridZero();
 
                 block1_X = rotatedCell1[0]; 
@@ -548,8 +543,6 @@ public class GameMemory {
 
             block_X = rblock_X + block0_X; 
             block_Y = rblock_Y + block0_Y; 
-            System.out.println(block_X); 
-            System.out.println(block_Y); 
             return new int[] {block_X, block_Y};
         }
 
@@ -599,7 +592,6 @@ public class GameMemory {
             boolean check = GameMemory.this.figure.collisionCheck(0);
             if (check == false) { 
                 figure.moveDown(); 
-                System.out.println(Arrays.deepToString(grid)); // To debug.
             }
             if(check == true) { 
                System.out.println("You lost!");
