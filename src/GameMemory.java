@@ -600,13 +600,13 @@ public class GameMemory {
             }
             if(check == true) { 
                 new AePlayWave("../Assets/sounds/game_over.wav").start();
-                System.out.println("You lost!");
                 //This is just a timer to delay exit from the game 
                 //in order to allow the audio file to play complietly. 
                 new java.util.Timer().schedule( 
                     new java.util.TimerTask() {
                             @Override
                             public void run() {
+                                System.out.println("You lost!");
                                 System.exit(0);
                             }
                         }, 615);
