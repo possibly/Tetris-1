@@ -29,6 +29,8 @@ TO DO:
 
 3)Create another panel to show the score of a player. 
 
-4)Find and use sounds for figures when they stop, dissapear, rotate. 
+4)Find and use sounds for figures when they stop, dissapear, rotate. DONE! 
 
 5)Change the ugly looks of the figures. 
+
+6)GET MY LAZY ASS to remove binary files from the history of the project, and attach them to release ONLY!
