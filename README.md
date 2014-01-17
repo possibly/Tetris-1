@@ -2,17 +2,11 @@ Tetris
 ======
 
 This is my very first programming project. 
-It contains a lot of bugs and its architecture is doubtful. 
-I do realize that rewriting it complietly is probably a good idea, 
-since it is not that big. However, I would like to stick to what I 
-have already done and try to fix it. 
 
 If you happen to see this code and you have useful suggestions on how 
 I can improve it and general comments on how I should have done it so 
 it is more simple and efficient, please let me know. 
 
-At the end, people who write shitty code sometimes just don't have anyone to 
-turn to for a review and advice.
 
 ----------------------------------------------------------------------------------
 
@@ -33,4 +27,4 @@ TO DO:
 
 5)Change the ugly looks of the figures. 
 
-6)GET MY LAZY ASS to remove binary files from the history of the project, and attach them to release ONLY!
+6)Remove binary files from the history of the project, and attach them to release ONLY!
